@@ -2,7 +2,7 @@
 const SHOP = {
   address: 'Near Haris Auto, Mohallah Chaudhrian, Chittarpari, Mirpur A.K',
   timing: '11:30 AM to 12:00 AM',
-  phones: { Ali: ['0300-3132136', '0345-9470312'], Tahir: ['0300-8881757', '05827-207757'] }
+  phones: { Ali: ['0300-9132136', '0345-5470312'], Tahir: ['0306-8881757', '05827-207537'] }
 };
 function renderLayout() {
   const h = document.getElementById('site-header');
