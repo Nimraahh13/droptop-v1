@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop &amp; Top Pizza &amp; Fast Foods | Mirpur A.K</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Hot, Cheesy &amp; <span>Fresh</span> Every Time</h1>
+      <p>Pizzas, burgers, shawarma and deals from Drop &amp; Top, Mirpur A.K. Order online for delivery or take away.</p>
+      <div class="hero-buttons">
+        <a href="menu.html" class="btn">Order Now</a>
+        <a href="tel:03003132136" class="btn btn-outline">Call 0300-3132136</a>
+      </div>
+      <p class="timing">Open daily: 11:30 AM to 12:00 AM</p>
+    </div>
+    <img src="images/logo.png" alt="Drop &amp; Top logo" class="hero-logo">
+  </div>
+</section>
+<section class="container">
+  <h2 class="section-title">Browse by Category</h2>
+  <div class="cat-grid">
+    <a class="cat-card" href="menu.html?category=Pizza"><span class="cat-icon">🍕</span>Pizza</a>
+    <a class="cat-card" href="menu.html?category=Special%20Pizza"><span class="cat-icon">🧀</span>Special Pizza</a>
+    <a class="cat-card" href="menu.html?category=Burgers"><span class="cat-icon">🍔</span>Burgers</a>
+    <a class="cat-card" href="menu.html?category=Shawarma%20%26%20Paratha"><span class="cat-icon">🌯</span>Shawarma &amp; Paratha</a>
+    <a class="cat-card" href="menu.html?category=Sides%20%26%20Snacks"><span class="cat-icon">🍟</span>Sides &amp; Snacks</a>
+    <a class="cat-card" href="menu.html?category=Regular%20Deals"><span class="cat-icon">🥤</span>Regular Deals</a>
+    <a class="cat-card" href="menu.html?category=Pizza%20Deals"><span class="cat-icon">🎉</span>Pizza Deals</a>
+    <a class="cat-card" href="menu.html?category=Family%20Deals"><span class="cat-icon">👨‍👩‍👧‍👦</span>Family Deals</a>
+  </div>
+</section>
+<section class="container">
+  <h2 class="section-title">Family Deals</h2>
+  <div class="menu-grid" id="deals"><p>Loading...</p></div>
+  <p class="center"><a href="menu.html" class="btn">See Full Menu</a></p>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script>loadHomeDeals();</script>
+</body>
+</html>

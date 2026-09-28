@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Orders | Owner Panel</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="admin-bar" id="admin-bar"></div>
+<main class="container hidden" id="admin-main">
+<h1 class="page-title">Orders</h1>
+<p><button type="button" class="btn btn-small" id="alert-btn" onclick="enableAlerts()">Turn on order alerts</button></p>
+<div class="alert success hidden" id="new-banner" onclick="markSeen()" style="cursor:pointer" title="Click to mark as seen"></div>
+<div class="stats">
+  <div class="stat">Pending Orders<b id="st-pending">0</b></div>
+  <div class="stat">Orders Today<b id="st-today">0</b></div>
+  <div class="stat">Sales Today<b id="st-sales">Rs. 0</b></div>
+  <div class="stat">All Orders<b id="st-all">0</b></div>
+</div>
+<div class="filters" id="filters" style="margin-bottom:16px"></div>
+<div class="table-wrap"><table>
+  <thead><tr><th>Order</th><th>Customer</th><th>Phone</th><th>Type / Address</th><th>Total</th><th>Date</th><th>Status</th><th></th></tr></thead>
+  <tbody id="orders-body"><tr><td colspan="8">Loading...</td></tr></tbody>
+</table></div>
+<p class="muted">This page checks for new orders every 30 seconds.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/admin.js"></script>
+<script>requireAdmin().then(u => { if (u) { loadOrders(); startLiveOrders(); setInterval(loadOrders, 60000); } });</script>
+</body>
+</html>

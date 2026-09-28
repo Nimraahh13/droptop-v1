@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Drop &amp; Top Pizza</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<section class="container narrow">
+  <h1 class="page-title">Your Cart</h1>
+  <div id="cart-items"></div>
+  <div id="cart-summary" class="summary">
+    <p>Total: <b id="cart-total">Rs. 0</b></p>
+    <a href="checkout.html" class="btn" id="checkout-btn">Proceed to Checkout</a>
+    <button class="btn btn-outline" onclick="clearCart()">Clear Cart</button>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script>renderCart();</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Owner Login | Drop &amp; Top</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="login-box">
+  <img src="../images/logo.png" alt="Drop &amp; Top logo">
+  <h1 class="page-title center">Owner Login</h1>
+  <div class="alert error hidden" id="login-error"></div>
+  <form class="form" onsubmit="login(event)">
+    <label>Email<input type="email" name="email" required></label>
+    <label>Password<input type="password" name="password" required></label>
+    <button class="btn btn-full">Login</button>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/admin.js"></script>
+<script>if (location.search.includes('denied')) { const e = document.getElementById('login-error'); e.textContent = 'This account is not an owner account.'; e.classList.remove('hidden'); }</script>
+</body>
+</html>

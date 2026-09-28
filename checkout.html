@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Drop &amp; Top Pizza</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<section class="container narrow">
+  <h1 class="page-title">Checkout</h1>
+  <div class="alert error hidden" id="checkout-error"></div>
+  <div class="checkout-grid">
+    <form class="form" id="checkout-form" onsubmit="placeOrder(event)">
+      <label>Full Name *<input type="text" name="customer_name" required maxlength="100"></label>
+      <label>Phone Number *<input type="tel" name="phone" required maxlength="15" placeholder="03XX-XXXXXXX"></label>
+      <label>Order Type *
+        <select name="order_type" id="order_type" onchange="toggleAddress()">
+          <option value="Delivery">Delivery</option><option value="Takeaway">Take Away</option>
+        </select></label>
+      <label id="address-box">Delivery Address *<textarea name="address" id="address" rows="3" maxlength="255"></textarea></label>
+      <label>Notes (optional)<input type="text" name="notes" maxlength="255" placeholder="e.g. extra spicy, no onions"></label>
+      <p class="muted">Payment: Cash on Delivery / Pay at counter</p>
+      <button type="submit" class="btn btn-full" id="place-btn">Place Order</button>
+    </form>
+    <div class="order-box">
+      <h3>Your Order</h3>
+      <div id="checkout-items"></div>
+      <p class="total-line">Total: <b id="checkout-total">Rs. 0</b></p>
+    </div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script>renderCheckout();</script>
+</body>
+</html>

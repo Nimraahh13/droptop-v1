@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Drop &amp; Top Pizza</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<section class="container">
+  <h1 class="page-title">Our Menu</h1>
+  <div class="filters" id="filters"></div>
+  <div id="menu-box"><p class="center">Loading menu...</p></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script>loadMenu();</script>
+</body>
+</html>

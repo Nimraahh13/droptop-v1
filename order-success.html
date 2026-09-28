@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Placed | Drop &amp; Top Pizza</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+<section class="container narrow center">
+  <h1 class="page-title">Order Successfully Placed!</h1>
+  <p>Your order number is <b id="oid"></b>.</p>
+  <p>We will call you shortly to confirm. For any question call <a href="tel:03003132136">0300-3132136</a>.</p>
+  <p><a href="menu.html" class="btn">Back to Menu</a></p>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/layout.js"></script>
+<script>const id=new URLSearchParams(location.search).get("id");document.getElementById("oid").textContent="#"+(/^\d+$/.test(id)?id:"");</script>
+</body>
+</html>
