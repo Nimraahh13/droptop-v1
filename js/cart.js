@@ -130,16 +130,43 @@ const CATEGORIES = ['Pizza', 'Special Pizza', 'Burgers', 'Shawarma & Paratha', '
 
 function menuCard(item) {
   const hasSizes = item.price_medium !== null;
-  const nameJs = escapeHtml(JSON.stringify(item.name));
-  return `<div class="menu-card"><h3>${escapeHtml(item.name)}</h3>
+
+  const nameJs = JSON.stringify(item.name).replace(/'/g, "&#39;");
+
+  return `<div class="menu-card">
+    <h3>${escapeHtml(item.name)}</h3>
+
     ${item.description ? `<p class="desc">${escapeHtml(item.description)}</p>` : ''}
-    ${hasSizes ? `<select id="size-${item.id}" onchange="updatePrice(${item.id})">
-      <option value="Small" data-price="${item.price}">Small 8" - Rs. ${item.price}</option>
-      <option value="Medium" data-price="${item.price_medium}">Medium 12" - Rs. ${item.price_medium}</option>
-      <option value="Large" data-price="${item.price_large}">Large 14" - Rs. ${item.price_large}</option>
-      <option value="X-Large" data-price="${item.price_xl}">X-Large - Rs. ${item.price_xl}</option></select>` : ''}
-    <div class="card-bottom"><span class="price" id="price-${item.id}">Rs. ${item.price}</span>
-      <button class="btn btn-small" onclick="addFromMenu(${item.id}, ${nameJs}, ${item.price})">Add to Cart</button></div></div>`;
+
+    ${hasSizes ? `
+      <select id="size-${item.id}" onchange="updatePrice(${item.id})">
+        <option value="Small" data-price="${item.price}">
+          Small 8" - Rs. ${item.price}
+        </option>
+        <option value="Medium" data-price="${item.price_medium}">
+          Medium 12" - Rs. ${item.price_medium}
+        </option>
+        <option value="Large" data-price="${item.price_large}">
+          Large 14" - Rs. ${item.price_large}
+        </option>
+        <option value="X-Large" data-price="${item.price_xl}">
+          X-Large - Rs. ${item.price_xl}
+        </option>
+      </select>
+    ` : ''}
+
+    <div class="card-bottom">
+      <span class="price" id="price-${item.id}">
+        Rs. ${item.price}
+      </span>
+
+      <button
+        class="btn btn-small"
+        onclick='addFromMenu(${item.id}, ${nameJs}, ${item.price})'>
+        Add to Cart
+      </button>
+    </div>
+  </div>`;
 }
 
 async function loadMenu() {
